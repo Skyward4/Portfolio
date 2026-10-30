@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Arush Aher – B.Tech CSE, VIT Vellore</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;800&family=Caveat:wght@600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#f6f8fc; --grid:#dbe4f1; --ink:#14213d; --muted:#4a5878;
+  --pen:#2f5bea; --mark:#ffe066; --margin:#e5484d; --card:#ffffff;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --paper:#0f1b33; --grid:#1c2c4d; --ink:#e8eef9; --muted:#a3b3d1;
+    --pen:#8aaeff; --mark:#ffd84d; --margin:#ff7a7f; --card:#15244422;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#0f1b33; --grid:#1c2c4d; --ink:#e8eef9; --muted:#a3b3d1;
+  --pen:#8aaeff; --mark:#ffd84d; --margin:#ff7a7f; --card:#15244422;
+  color-scheme:dark;
+}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:border-box}
+body{
+  margin:0; color:var(--ink); background-color:var(--paper);
+  background-image:
+    linear-gradient(var(--grid) 1px,transparent 1px),
+    linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+  background-size:28px 28px;
+  font-family:"Bricolage Grotesque",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  font-size:1.125rem; line-height:1.65;
+}
+a{color:var(--pen)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--pen);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 clamp(1.25rem,5vw,3rem) 0 clamp(2.75rem,8vw,5.5rem);position:relative}
+/* red margin rule, like a notebook page */
+.wrap::before{content:"";position:absolute;left:clamp(1.9rem,6vw,3.6rem);top:0;bottom:0;width:2px;background:var(--margin);opacity:.55}
+nav{display:flex;gap:1.25rem;flex-wrap:wrap;padding:1.25rem 0;font-weight:600}
+nav a{color:var(--ink);text-decoration:none;border-bottom:2px solid transparent}
+nav a:hover{border-color:var(--pen)}
+header.hero{padding:clamp(3rem,10vw,6.5rem) 0 3.5rem}
+.note{font-family:Caveat,"Comic Sans MS",cursive;font-size:1.4rem;color:var(--margin);margin:0 0 .5rem;transform:rotate(-2deg);display:inline-block}
+h1{font-size:clamp(2.8rem,9vw,6.5rem);line-height:1.02;letter-spacing:-.03em;font-weight:800;margin:0 0 1.25rem}
+.lead{font-size:clamp(1.15rem,2.6vw,1.5rem);max-width:44rem;margin:0 0 2rem;color:var(--muted)}
+.btns{display:flex;gap:.75rem;flex-wrap:wrap}
+.btn{display:inline-block;padding:.7rem 1.2rem;border:2px solid var(--ink);border-radius:6px;font-weight:600;text-decoration:none;color:var(--ink);background:var(--paper)}
+.btn.primary{background:var(--ink);color:var(--paper)}
+.btn:hover{background:var(--mark);color:#14213d;border-color:#14213d}
+section{padding:3.25rem 0}
+h2{font-size:2.4rem;letter-spacing:-.02em;margin:0 0 1rem;font-weight:800}
+p{max-width:52rem;margin:0 0 1rem}
+mark{background:linear-gradient(transparent 55%,var(--mark) 55%);color:inherit;padding:0 .1em}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) mark{background:linear-gradient(transparent 55%,rgba(255,216,77,.35) 55%)}}
+:root[data-theme="dark"] mark{background:linear-gradient(transparent 55%,rgba(255,216,77,.35) 55%)}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:1rem}
+.box{background:var(--card);border:2px solid var(--ink);border-radius:8px;padding:1rem 1.15rem}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .box{background:rgba(21,36,68,.85)}}
+:root[data-theme="dark"] .box{background:rgba(21,36,68,.85)}
+.box h3{margin:0 0 .5rem;font-size:1.1rem}
+.box ul{margin:0;padding-left:1.1rem}
+.box li{margin:.15rem 0}
+.projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1rem}
+.proj{display:grid;gap:.35rem}
+.proj h3{margin:0;font-size:1.25rem}
+.proj p{margin:0;color:var(--muted)}
+.tag{font-weight:600;font-size:.9rem;color:var(--ink)}
+.tag b{background:var(--mark);color:#14213d;padding:.05rem .45rem;border-radius:3px;font-weight:600}
+.tl{list-style:none;margin:0;padding:0;border-left:3px solid var(--pen)}
+.tl li{padding:0 0 1.25rem 1.25rem;position:relative}
+.tl li::before{content:"";position:absolute;left:-9px;top:.55rem;width:15px;height:15px;border-radius:50%;background:var(--paper);border:3px solid var(--pen)}
+.tl .now::before{background:var(--pen)}
+.tl strong{display:block}
+.tl span{color:var(--muted)}
+.contact a{font-weight:600}
+footer{padding:2.5rem 0 3rem;color:var(--muted);font-size:.95rem}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav aria-label="Sections">
+    <a href="#about">About</a><a href="#learning">Learning</a><a href="#projects">Projects</a><a href="#goals">Goals</a><a href="#path">Path</a><a href="#contact">Contact</a>
+  </nav>
+
+  <header class="hero">
+    <p class="note">hello from Vellore!</p>
+    <h1>Hi, I’m Arush Aher.</h1>
+    <p class="lead">First-year B.Tech Computer Science student at VIT Vellore. I’m learning to build software and writing down what I learn along the way.</p>
+    <div class="btns">
+      <a class="btn primary" href="#projects">See my projects</a>
+      <a class="btn" href="#contact">Get in touch</a>
+    </div>
+  </header>
+
+  <section id="about">
+    <h2>About</h2>
+    <p>I’m a CSE student at Vellore Institute of Technology, just starting my degree. I like figuring out how things work, then <mark>building small projects to prove I understand them</mark>.</p>
+    <p>I learn best by building. I read the docs, break things, ask questions, and write down what I figured out so I can come back to it later. That habit has already taken me from classroom exercises to a hackathon project and a club project.</p>
+    <p>Right now I’m getting comfortable with programming fundamentals and exploring areas like web development, data structures and AI. I’m looking for teammates, clubs and hackathons where I can learn from people ahead of me, and I’m happy to help others when I can.</p>
+  </section>
+
+  <section id="learning">
+    <h2>What I’m learning</h2>
+    <div class="cols">
+      <div class="box"><h3>Comfortable with</h3><ul><li>C / Python basics</li><li>HTML &amp; CSS</li><li>Git &amp; GitHub</li></ul></div>
+      <div class="box"><h3>Learning now</h3><ul><li>Data structures</li><li>JavaScript</li><li>Problem solving</li></ul></div>
+      <div class="box"><h3>Next up</h3><ul><li>Databases &amp; SQL</li><li>Machine learning</li><li>Open source</li></ul></div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="projects">
+      <article class="box proj">
+        <h3>This portfolio</h3>
+        <p>A single-page site to share my work, built with HTML and CSS and designed to look like a notebook page. It adapts to phones, laptops and dark mode.</p>
+        <span class="tag"><b>Live</b> HTML · CSS</span>
+      </article>
+      <article class="box proj">
+        <h3>Trip-maker</h3>
+        <p>A hackathon project I built with a friend: a trip planner that helps you find flights and hotel details in one place. We built it against the clock, so a few features are still missing and I plan to come back and finish them.</p>
+        <span class="tag"><b>Hackathon</b> Python · <a href="https://github.com/Skyward4/Trip-maker">Code on GitHub</a></span>
+      </article>
+      <article class="box proj">
+        <h3>Watch-Party</h3>
+        <p>A project I built for the VinnovateIT club at VIT Vellore, written in JavaScript. The code is open on GitHub if you want to read it.</p>
+        <span class="tag"><b>Club project</b> JavaScript · <a href="https://github.com/Skyward4/Watch-Party">Code on GitHub</a></span>
+      </article>
+    </div>
+  </section>
+
+  <section id="goals">
+    <h2>Goals for my first year</h2>
+    <p>College gives me four years to get good at this, so I want to start with good habits rather than shortcuts. I’d rather finish one small thing properly than start five big ones.</p>
+    <div class="cols">
+      <div class="box"><h3>Build</h3><p style="margin:0">Finish Trip-maker’s missing features and ship a new project every semester.</p></div>
+      <div class="box"><h3>Practise</h3><p style="margin:0">Solve coding problems regularly so data structures feel natural, not memorised.</p></div>
+      <div class="box"><h3>Join in</h3><p style="margin:0">Take part in more hackathons and club projects, and learn from my seniors.</p></div>
+    </div>
+  </section>
+
+  <section id="path">
+    <h2>My path</h2>
+    <ul class="tl">
+      <li class="now"><strong>B.Tech, Computer Science &amp; Engineering</strong><span>VIT Vellore · 1st year · started 2026</span></li>
+      <li><strong>JEE Main: 91.68 percentile</strong><span>National engineering entrance exam</span></li>
+      <li><strong>VITEEE: rank 20068</strong><span>Entrance exam for VIT</span></li>
+      <li><strong>Class XII: 87.6%</strong><span>Higher secondary</span></li>
+      <li><strong>Class X: 93%</strong><span>Secondary school</span></li>
+    </ul>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>Contact</h2>
+    <p>Want to collaborate on a project or just say hi? Reach me here.</p>
+    <p>
+      <a href="mailto:arush.pradeepaher2026@vitstudent.ac.in">arush.pradeepaher2026@vitstudent.ac.in</a><br>
+      <a href="https://github.com/Skyward4">GitHub</a> · <a href="https://www.linkedin.com/in/arush-aher-755435203/">LinkedIn</a>
+    </p>
+  </section>
+
+  <footer>© 2026 Arush Aher. Built by hand, one commit at a time.</footer>
+</div>
+</body>
+</html>
